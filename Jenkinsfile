@@ -9,7 +9,7 @@ pipeline {
     stage('Build') {
       steps {
         withMaven(maven: 'M3') {
-          sh 'mvn clean install'
+          sh '_JAVA_OPTIONS=-Djdk.net.URLClassPath.disableClassPathURLCheck=true mvn clean install'
         }
         
       }
